@@ -1,11 +1,18 @@
+<div class="container mt-5">
 <h2><%= @list.name %></h2>
 
 <%= link_to "Retour aux listes", lists_path%>
 
-<%# <p><strong>Détails</strong></p>
-<ul class="list-group">
-  <% @list.reviews.each do |review| %>
-    <%# <li class="list-group-item"><%= review.content</li> %>
-  <%# <% end %>
-<%# </ul>
-<br> %>
+<%= link_to "Ajouter un bookmark", new_list_bookmark_path(@list)%>
+
+<% @list.movies.each do |movie| %>
+<div class="card" style="width: 18rem;">
+  <img src="<%= movie.poster.url %>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= movie.title %></h5>
+    <p class="card-text"><%= movie.overview %></p>
+  </div>
+</div>
+<%end%>
+
+</div>
