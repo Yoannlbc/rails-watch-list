@@ -1,18 +1,45 @@
 <div class="container mt-5">
-<h2><%= @list.name %></h2>
+  <nav class="navbar bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="fa-solid fa-clapperboard"></i>
+      </a>
+      <div class="navbar-nav ms-auto d-flex flex-row">
+        <%= link_to "Retour aux listes", lists_path, class: "btn btn-outline-secondary me-2" %>
+        <%= link_to "Ajouter un bookmark", new_list_bookmark_path(@list), class: "btn btn-outline-secondary" %>
+    </div>
+    </div>
+  </nav>
 
-<%= link_to "Retour aux listes", lists_path%>
 
-<%= link_to "Ajouter un bookmark", new_list_bookmark_path(@list)%>
-
-<% @list.movies.each do |movie| %>
-<div class="card" style="width: 18rem;">
-  <img src="<%= movie.poster.url %>" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"><%= movie.title %></h5>
-    <p class="card-text"><%= movie.overview %></p>
+  <div class="banner">
+    <%= image_tag "cinema.jpg", class: "banner-img" %>
+      <div class="banner-content">
+        <h2><%= @list.name %></h2>
   </div>
 </div>
-<%end%>
+
+
+<div class="container">
+  <h2> Ma liste </h2>
+
+  <div class="banner-image mb-5">
+    <img src="/home/yoann/code/Yoannlbc/rails-watch-list/app/assets/images/cinema.jpg" class="img-fluid" alt="Cinéma">
+  </div>
+
+  <div style="height: 200px;"></div>
+
+  <div class="d-flex flex-wrap justify-content-center mt-5">
+    <% @list.movies.each do |movie| %>
+    <div class="card m-2" style="width: 300px">
+      <img src= "<%= movie.poster_url %>" class="card-img-top" alt="...">
+    <div class="card-body">
+           <h5 class="card-title"><%= movie.title %></h5>
+              <p class="card-text"><%= movie.overview %></p>
+  </div>
+    </div>
+      <%end%>
+        </div>
+          </div>
 
 </div>

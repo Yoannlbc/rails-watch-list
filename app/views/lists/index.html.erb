@@ -1,9 +1,25 @@
-<h1> Listes </h1>
-<ul>
-  <% @lists.each do |list| %>
-  <li><%= list.name %>
-  <%= link_to "Voir la liste", list_path(list)%></li>
+<div class="container mt-5">
+
+<nav class="navbar bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <i class="fa-solid fa-film"></i>
+      <% @lists.each do |list| %>
+        <%= list.name %>
+  <%= link_to "Voir les listes", list_path(list), class: "btn btn-outline-secondary"%>
   <% end %>
-</ul>
-  <%= link_to "Nouvelle liste", new_list_path %>
-  
+  <%= link_to "Nouvelle liste", new_list_path, class: "btn btn-outline-secondary"%>
+    </a>
+  </div>
+</nav>
+
+<div class="banner">
+  <%= image_tag "cinema_2.jpg", class: "banner-img" %>
+  <div class="banner-content">
+
+  </div>
+</div>
+
+
+
+</div>

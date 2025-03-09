@@ -1,0 +1,29 @@
+.banner-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+
+.banner-img {
+  width: 84%;
+  height: 50%;
+  object-fit: cover;
+  position: absolute;
+  z-index: 1;
+}
+
+.banner-content h2 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
